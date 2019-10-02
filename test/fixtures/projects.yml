@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  target: MyString
+  overview: MyText
+  hw_configuration: MyText
+  sw_configuration: MyText
+  production_url: MyString
+  from: 2019-10-02
+  to: 2019-10-02
+  user: one
+
+two:
+  name: MyString
+  target: MyString
+  overview: MyText
+  hw_configuration: MyText
+  sw_configuration: MyText
+  production_url: MyString
+  from: 2019-10-02
+  to: 2019-10-02
+  user: two

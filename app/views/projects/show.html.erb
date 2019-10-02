@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @project.target %>
+</p>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @project.overview %>
+</p>
+
+<p>
+  <strong>Hw configuration:</strong>
+  <%= @project.hw_configuration %>
+</p>
+
+<p>
+  <strong>Sw configuration:</strong>
+  <%= @project.sw_configuration %>
+</p>
+
+<p>
+  <strong>Production url:</strong>
+  <%= @project.production_url %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @project.from %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @project.to %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.user %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
