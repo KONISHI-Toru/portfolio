@@ -7,8 +7,8 @@ one:
   hw_configuration: MyText
   sw_configuration: MyText
   production_url: MyString
-  from: 2019-10-02
-  to: 2019-10-02
+  from: 2019-10-03
+  to: 2019-10-03
   user: one
 
 two:
@@ -18,6 +18,6 @@ two:
   hw_configuration: MyText
   sw_configuration: MyText
   production_url: MyString
-  from: 2019-10-02
-  to: 2019-10-02
+  from: 2019-10-03
+  to: 2019-10-03
   user: two
