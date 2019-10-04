@@ -8,8 +8,10 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
 
+    include SessionsHelper
+    
     def authenticate_admin
-      # TODO Add authentication logic here.
+      redirect_to login_path unless logged_in?
     end
 
     # Override this value to specify the number of elements to display at a time
