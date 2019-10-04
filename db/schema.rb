@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_030653) do
+ActiveRecord::Schema.define(version: 2019_10_04_022600) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -58,16 +58,16 @@ ActiveRecord::Schema.define(version: 2019_10_03_030653) do
   end
 
   create_table "project_tech_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "tech_category_id"
+    t.bigint "project_id"
     t.bigint "tech_tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tech_category_id"], name: "index_project_tech_tags_on_tech_category_id"
+    t.index ["project_id"], name: "index_project_tech_tags_on_project_id"
     t.index ["tech_tag_id"], name: "index_project_tech_tags_on_tech_tag_id"
   end
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "target"
     t.text "overview"
     t.text "hw_configuration"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_030653) do
   add_foreign_key "project_phases", "projects"
   add_foreign_key "project_roles", "projects"
   add_foreign_key "project_roles", "roles"
-  add_foreign_key "project_tech_tags", "tech_categories"
+  add_foreign_key "project_tech_tags", "projects"
   add_foreign_key "project_tech_tags", "tech_tags"
   add_foreign_key "projects", "users"
   add_foreign_key "tech_tags", "tech_categories"
