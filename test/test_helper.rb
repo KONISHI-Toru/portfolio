@@ -1,3 +1,4 @@
+# coding: utf-8
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
@@ -7,4 +8,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  # テストユーザーがログイン中の場合にtrueを返す
+  def is_logged_in?
+    !session[:user].nil?
+  end
 end

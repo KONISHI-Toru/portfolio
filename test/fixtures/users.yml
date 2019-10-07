@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-  password_digest: MyString
+test1:
+  name: テスト　ユーザ１
+  email: test1@test.com
+  password_digest: <%= User.digest('testpass1') %>
   login_token: MyString
-  introduction: MyText
+  introduction: テスト　ユーザ１の自己紹介の文章。
 
-two:
-  name: MyString
-  email: MyString
-  password_digest: MyString
+test2:
+  name: テスト　ユーザ２
+  email: test2@test.com
+  password_digest: <%= User.digest('testpass2') %>
   login_token: MyString
-  introduction: MyText
+  introduction: テスト　ユーザ２の自己紹介の文章。
