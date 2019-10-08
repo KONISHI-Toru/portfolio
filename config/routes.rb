@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'portfolio/index'
+  get 'portfolio/show'
   get    'login',  to: 'sessions#new'
   post   'login',  to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -14,6 +16,5 @@ Rails.application.routes.draw do
     end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :projects
-  root to: "projects#index"
+  root to: "portfolio#index"
 end
