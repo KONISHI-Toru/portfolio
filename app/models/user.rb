@@ -1,8 +1,11 @@
 # coding: utf-8
 class User < ApplicationRecord
+  before_save { self.email = email.downcase }
   has_secure_password validations: true
 
-  validates :email, presence: true, uniqueness: true
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :password, presence: true, length: { minimum: 6 }
 
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)
