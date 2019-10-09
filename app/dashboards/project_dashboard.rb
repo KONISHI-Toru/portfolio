@@ -26,6 +26,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     production_url: Field::String,
     from: Field::DateTime,
     to: Field::DateTime,
+    published: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -39,6 +40,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   name
   from
   to
+  published
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -59,6 +61,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   production_url
   from
   to
+  published
   created_at
   updated_at
   ].freeze
@@ -81,6 +84,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   production_url
   from
   to
+  published
   ].freeze
 
   # COLLECTION_FILTERS

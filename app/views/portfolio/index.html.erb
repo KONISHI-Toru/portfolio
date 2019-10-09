@@ -6,7 +6,7 @@
     <%= f.label :user_id, 'ユーザ:', class: "col-sm-2 control-label" %>
     <div class="col-sm-6">
       <%= f.collection_select :user_id,
-      User.all, :id, :name,
+      User.published, :id, :name,
       {},
       {class: "form-control"} %>
     </div>

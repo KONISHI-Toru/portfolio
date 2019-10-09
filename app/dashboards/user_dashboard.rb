@@ -16,6 +16,7 @@ class UserDashboard < Administrate::BaseDashboard
     password_digest: Field::String,
     login_token: Field::String,
     introduction: Field::Text,
+    published: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -29,6 +30,7 @@ class UserDashboard < Administrate::BaseDashboard
   id
   name
   email
+  published
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,6 +41,7 @@ class UserDashboard < Administrate::BaseDashboard
   email
   login_token
   introduction
+  published
   created_at
   updated_at
   ].freeze
@@ -52,6 +55,7 @@ class UserDashboard < Administrate::BaseDashboard
   introduction
   password
   password_confirmation
+  published
   ].freeze
 
   # COLLECTION_FILTERS

@@ -45,4 +45,25 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  test "published only" do
+    published_user = User.new(name: "Published User",
+                     email: "published@example.com",
+                     password: "password",
+                     password_confirmation: "password",
+                     published: true)
+
+    unpublished_user = User.new(name: "Unpublished User",
+                     email: "unpublished@example.com",
+                     password: "password",
+                     password_confirmation: "password")
+    published_user.save
+    unpublished_user.save
+    
+    result = User.published
+    assert_equal 1, result.length
+    result.each do |user|
+      assert user.published?
+    end
+  end
 end
