@@ -27,8 +27,7 @@
 	    <li class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">管理</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		<%= link_to 'ユーザ', '/admin/users', class: "dropdown-item" %>
-		<%= link_to 'プロジェクト', '/admin/projects', class: "dropdown-item" %>
+		<%= render "admin/application/navigation", namespace: "admin" -%>
               </div>
 	    </li>
 	    <% if logged_in? %>

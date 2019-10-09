@@ -42,8 +42,7 @@ By default, it renders:
 	  <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">管理</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	      <%= link_to 'ユーザ', '/admin/users', class: "dropdown-item" %>
-	      <%= link_to 'プロジェクト', '/admin/projects', class: "dropdown-item" %>
+	      <%= render "admin/application/navigation" -%>
             </div>
 	  </li>
           <li class="nav-item"><%= link_to "Log out", logout_path, class: "nav-link", method: :delete %></li>
@@ -53,7 +52,6 @@ By default, it renders:
   </header>
 
   <div class="app-container">
-    <%#= render "navigation" -%>
 
     <main class="main-content" role="main">
       <%= render "flashes" -%>
