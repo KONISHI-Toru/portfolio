@@ -5,7 +5,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, on: :create
+  validates :password, length: { minimum: 6 }, allow_blank: true
 
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)
