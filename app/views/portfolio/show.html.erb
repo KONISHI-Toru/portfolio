@@ -73,14 +73,25 @@
 		  <h5>概要</h5>
 		  <p><%= project.overview %></p>
 		<% end %>
-		<% if project.hw_configuration.present? %>
+		<% if has_hw_configuration?(project) %>
 		  <h5>HW構成</h5>
+		  <% if project.hw_diagram.attached? %>
+		    <figure class="figure w-auto d-block">
+		      <%= image_tag project.hw_diagram, class:"img-fluid mx-auto d-block" %>
+		      <figcaption class="figure-caption text-center">SW構成図</figcaption>
+		    </figure>
+		  <% end %>
 		  <p><%= project.hw_configuration %></p>
 		<% end %>
-		<% if project.sw_configuration.present? %>
+		<% if has_sw_configuration?(project) %>
 		  <h5>SW構成</h5>
 		  <p><%= project.sw_configuration %></p>
-		  <!-- <img src="pr/pr.001.png" class="img-fluid"> -->
+		  <% if project.sw_diagram.attached? %>
+		    <figure class="figure w-auto d-block">
+		      <%= image_tag project.sw_diagram, class:"figure-img img-fluid mx-auto d-block" %>
+		      <figcaption class="figure-caption text-center">SW構成図</figcaption>
+		    </figure>
+		  <% end %>
 		<% end %>
 		<h5>使用技術</h5>
 		<p>

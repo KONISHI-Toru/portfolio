@@ -41,4 +41,13 @@ module PortfolioHelper
 
     "#{from} 〜 #{to}"
   end
+
+  def has_hw_configuration?(project)
+    project.hw_configuration.present? || project.hw_diagram.attached?
+  end
+
+  def has_sw_configuration?(project)
+    project.sw_configuration.present? || project.sw_diagram.attached?
+  end
+
 end
