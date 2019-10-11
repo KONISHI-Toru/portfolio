@@ -94,7 +94,7 @@
 		<% end %>
 		<% if project.from.present? || project.to.present? %>
 		  <h5>期間</h5>
-		  <p><%= project.from.strftime('%Y年%-m月') %> 〜 <%= project.to.strftime('%Y年%-m月') %></p>
+		  <p><%= project_period(project) %></p>
 		<% end %>
 	      </div>
 	    </div>
@@ -103,8 +103,7 @@
       </div>
 
       <h2>連絡先</h2>
-      <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x73;&#x74;&#x69;&#x6e;&#x67;&#x40;&#x6e;&#x69;&#x66;&#x74;&#x79;&#x2e;&#x63;&#x6f;&#x6d;">&#x73;&#x74;&#x69;&#x6e;&#x67;&#x40;&#x6e;&#x69;&#x66;&#x74;&#x79;&#x2e;&#x63;&#x6f;&#x6d;</a>
-      <p><%= raw @user.email.bytes.map{|v| "&\#x#{v.to_s(16)};"}.join %></p>
+      <p><%= mailto_link @user %></p>
     </div>
 
   </body>
