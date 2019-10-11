@@ -4,7 +4,7 @@ class PortfolioForm
 
   attr_accessor :user_id, :tech_tag_ids
 
-  validates :user_id, presence: true
+  validates :user_id, presence: true, on: :show
   
   def search
     condition = Project
@@ -14,5 +14,8 @@ class PortfolioForm
     if tech_tag_ids.present?
       condition = condition.where(tech_tags: {id: tech_tag_ids})
     end
+    condition = condition.where(published: true)
+
+    condition
   end
 end

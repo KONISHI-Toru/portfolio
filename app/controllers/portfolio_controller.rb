@@ -5,9 +5,16 @@ class PortfolioController < ApplicationController
   end
 
   def show
-    form = params.require(:portfolio_form).permit(:user_id, {tag_ids: []})
+    @user = User.find(params[:portfolio_form][:user_id])
+    if ! @user.published
+      # 非公開ユーザが指定された場合は元画面に戻す。
+      render action: :index
+      return
+    end
+
+    form = params.require(:portfolio_form).permit(:user_id, {tech_tag_ids: []})
     @portfolio_form = PortfolioForm.new(form)
-    @portfolio = @portfolio_form.search()
+    @projects = @portfolio_form.search()
 
     # jumbotron を使っているので、application.html.erb のレイアウトを
     # 適用しないようにする。

@@ -4,9 +4,8 @@
     <title>ポートフォリオ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
      h2 {
        margin-top: 1rem;
@@ -31,8 +30,7 @@
     <div class="container-fluid">
       <h2>自己紹介</h2>
       <p>
-	UNIX系のエンジニアとしてスタートしましたが、
-	現在ではWeb系のシステムの開発が中心になっております。
+	<%= @user.introduction %>
       </p>
 
       <h2>主な開発実績</h2>
@@ -45,10 +43,9 @@
 	  </div>
 	  <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1" data-parent="#accordion2">
 	    <div class="card-body">
-	      アイテム1のコンテンツ
 	      <h5>概要</h5>
 	      <h5>システム構成</h5>
-	      <img src="pr/pr.001.png" class="img-fluid">
+	      <!-- <img src="pr/pr.001.png" class="img-fluid"> -->
 	      <h5>使用技術</h5>
 	    </div>
 	  </div>
@@ -63,25 +60,52 @@
 	    <div class="card-body">アイテム2のコンテンツ</div>
 	  </div>
 	</div>
-	<div class="card">
-	  <div class="card-header" role="tab" id="heading3">
-	    <h5 class="mb-0">
-              <a class="collapsed text-body stretched-link text-decoration-none" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3"> アイテム3 </a>
-	    </h5>
+	<% @projects.each do |project| %>
+	  <div class="card">
+	    <div class="card-header" role="tab" id="heading3">
+	      <h5 class="mb-0">
+		<a class="collapsed text-body stretched-link text-decoration-none" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3"> <%= project.name %> </a>
+	      </h5>
+	    </div>
+	    <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3" data-parent="#accordion2">
+	      <div class="card-body">
+		<% if project.overview.present? %>
+		  <h5>概要</h5>
+		  <p><%= project.overview %></p>
+		<% end %>
+		<% if project.hw_configuration.present? %>
+		  <h5>HW構成</h5>
+		  <p><%= project.hw_configuration %></p>
+		<% end %>
+		<% if project.sw_configuration.present? %>
+		  <h5>SW構成</h5>
+		  <p><%= project.sw_configuration %></p>
+		  <!-- <img src="pr/pr.001.png" class="img-fluid"> -->
+		<% end %>
+		<h5>使用技術</h5>
+		<p>
+		  <% project.tech_tags.each do |tags| %>
+		    <%= tags.name %>,
+		  <% end %>
+		</p>
+		<% if project.production_url.present? %>
+		  <h5>本番環境URL</h5>
+		  <p><a href="<%= project.production_url %>"><%= project.production_url %></a> </p>
+		<% end %>
+		<% if project.from.present? || project.to.present? %>
+		  <h5>期間</h5>
+		  <p><%= project.from.strftime('%Y年%-m月') %> 〜 <%= project.to.strftime('%Y年%-m月') %></p>
+		<% end %>
+	      </div>
+	    </div>
 	  </div>
-	  <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3" data-parent="#accordion2">
-	    <div class="card-body">アイテム3のコンテンツ</div>
-	  </div>
-	</div>
+	<% end %>
       </div>
 
       <h2>連絡先</h2>
       <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x73;&#x74;&#x69;&#x6e;&#x67;&#x40;&#x6e;&#x69;&#x66;&#x74;&#x79;&#x2e;&#x63;&#x6f;&#x6d;">&#x73;&#x74;&#x69;&#x6e;&#x67;&#x40;&#x6e;&#x69;&#x66;&#x74;&#x79;&#x2e;&#x63;&#x6f;&#x6d;</a>
+      <p><%= raw @user.email.bytes.map{|v| "&\#x#{v.to_s(16)};"}.join %></p>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   </body>
 
