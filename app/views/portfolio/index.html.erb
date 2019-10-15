@@ -1,3 +1,13 @@
+<style>
+ .accordion > .card:first-of-type {
+   border-radius: 0.25rem;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+ }
+ .accordion > .card:last-of-type {
+   border-radius: 0.25rem;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+ }
+</style>
 <h1>ポートフォリオ</h1>
 
 <%= form_with model: @portfolio_form, url: portfolio_show_path, method: :get, local: true, html:  { class: "form-horizontal" } do |f| %>
@@ -12,6 +22,40 @@
     </div>
   </div>
 
+
+  <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="card">
+      <div class="card-header" role="tab" id="headingOne">
+	<h5 class="mb-0">
+          <a class="text-body" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne"  style="display: block; width: 100%">
+            詳細条件
+          </a>
+	</h5>
+      </div>
+      <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+	<div class="card-body">
+	  <fieldset class="form-group condition">
+	    <legend class="condition">技術要素</legend>
+	    <div class="form-group">
+	      <% TechCategory.all.each do |category| %>
+		<label class="col-sm-2 control-label"><%= category.name %>:</label>
+		<div class="col-sm-10">
+		  <%= f.collection_check_boxes :tech_tag_ids, category.tech_tags, :id, :name, {include_hidden: false} do |b| %>
+		    <div class="checkbox-inline" >
+		      <%= b.label { b.check_box + b.text } %>
+		    </div>
+		  <% end %>
+		</div>
+	      <% end %>
+	    </div>
+	  </fieldset>
+	</div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <%= f.submit 'Show', class: "btn btn-primary", formtarget: "_blank" %>
