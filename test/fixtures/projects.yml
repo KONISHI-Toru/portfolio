@@ -1,23 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  target: MyString
-  overview: MyText
-  hw_configuration: MyText
-  sw_configuration: MyText
-  production_url: MyString
+DEFAULTS: &DEFAULTS
+  name: $LABEL開発
+  target: ◯◯業界向け
+  overview: $LABELの概要です。
+  hw_configuration: $LABELのHW構成の説明です。
+  sw_configuration: $LABELのSW構成の説明です。
+  production_url: http://www.$LABEL.com/
   from: 2019-10-04
   to: 2019-10-04
-  user: one
+  user: test1
+  published: true
 
-two:
-  name: MyString
-  target: MyString
-  overview: MyText
-  hw_configuration: MyText
-  sw_configuration: MyText
-  production_url: MyString
-  from: 2019-10-04
-  to: 2019-10-04
-  user: two
+proj001:
+  <<: *DEFAULTS
+  from: 2018-10-01
+  to: 2018-12-01
+
+proj002:
+  <<: *DEFAULTS
+  from: 2019-1-01
+  to: 2019-3-01
+  user: test1
+  published: false
+
+proj003:
+  <<: *DEFAULTS
+  from: 2015-1-01
+  to: 2015-5-01
+  user: test2
+
+proj004:
+  <<: *DEFAULTS
+  from: 2015-1-01
+  to: 2015-6-01
+  user: test1

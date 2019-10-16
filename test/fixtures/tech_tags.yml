@@ -1,9 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  tech_category: one
+tech_tag1:
+  tech_category: tech_category1
   name: MyString
 
-two:
-  tech_category: two
+tech_tag2:
+  tech_category: tech_category2
   name: MyString
+
+tech_tag3:
+  tech_category: tech_category3
+  name: MyString
+
+tech_tag4:
+  tech_category: tech_category1
+  name: MyString
+
+tech_tag5:
+  tech_category: tech_category1
+  name: MyString
+
+tech_tag6:
+  tech_category: tech_category2
+  name: MyString
+
+tech_tag7:
+  tech_category: tech_category3
+  name: MyStrin

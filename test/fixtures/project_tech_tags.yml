@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  project: one
-  tech_tag: one
+  project: proj001
+  tech_tag: tech_tag1
 
 two:
-  project: two
-  tech_tag: two
+  project: proj001
+  tech_tag: tech_tag2
+
+three:
+  project: proj002
+  tech_tag: tech_tag1
+
+four:
+  project: proj003
+  tech_tag: tech_tag2

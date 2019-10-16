@@ -1,15 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+DEFAULTS: &DEFAULTS
+  email: $LABEL@test.com
+  login_token: NotUsed
+  published: true
+
 test1:
+  <<: *DEFAULTS
   name: テスト　ユーザ１
-  email: test1@test.com
   password_digest: <%= User.digest('testpass1') %>
-  login_token: MyString
   introduction: テスト　ユーザ１の自己紹介の文章。
 
 test2:
+  <<: *DEFAULTS
   name: テスト　ユーザ２
-  email: test2@test.com
   password_digest: <%= User.digest('testpass2') %>
-  login_token: MyString
   introduction: テスト　ユーザ２の自己紹介の文章。
+  published: false

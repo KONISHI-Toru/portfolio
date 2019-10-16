@@ -12,7 +12,7 @@ class PortfolioForm
     # user_id は必須。
     condition = condition.where(user_id: user_id)
     if tech_tag_ids.present?
-      condition = condition.where(tech_tags: {id: tech_tag_ids})
+      condition = condition.includes(:tech_tags).where(tech_tags: {id: tech_tag_ids})
     end
     condition = condition.where(published: true)
 

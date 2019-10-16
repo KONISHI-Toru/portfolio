@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+tech_category1:
+  name: カテゴリ１
 
-two:
-  name: MyString
+tech_category2:
+  name: カテゴリ２
+
+tech_category3:
+  name: カテゴリ３
+
