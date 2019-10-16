@@ -40,8 +40,8 @@ class TechTagDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  name
   tech_category
+  name
   ].freeze
 
   # COLLECTION_FILTERS
@@ -62,4 +62,7 @@ class TechTagDashboard < Administrate::BaseDashboard
   # def display_resource(role)
   #   "Role ##{role.id}"
   # end
+  def display_resource(tech_tag)
+    tech_tag.name
+  end
 end

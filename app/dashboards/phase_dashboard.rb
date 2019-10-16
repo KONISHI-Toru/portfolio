@@ -22,8 +22,6 @@ class PhaseDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  project_phases
-  projects
   id
   name
   ].freeze
@@ -31,8 +29,6 @@ class PhaseDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  project_phases
-  projects
   id
   name
   created_at
@@ -43,8 +39,6 @@ class PhaseDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  project_phases
-  projects
   name
   ].freeze
 
@@ -66,4 +60,7 @@ class PhaseDashboard < Administrate::BaseDashboard
   # def display_resource(phase)
   #   "Phase ##{phase.id}"
   # end
+  def display_resource(phase)
+    phase.name
+  end
 end

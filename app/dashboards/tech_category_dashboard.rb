@@ -22,8 +22,6 @@ class TechCategoryDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   name
-  created_at
-  updated_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -60,4 +58,7 @@ class TechCategoryDashboard < Administrate::BaseDashboard
   # def display_resource(tech_category)
   #   "TechCategory ##{tech_category.id}"
   # end
+  def display_resource(tech_category)
+    tech_category.name
+  end
 end

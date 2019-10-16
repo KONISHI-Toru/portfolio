@@ -105,4 +105,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   # def display_resource(project)
   #   "Project ##{project.id}"
   # end
+  def display_resource(project)
+    project.name
+  end
 end
