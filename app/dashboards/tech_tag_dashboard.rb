@@ -13,6 +13,7 @@ class TechTagDashboard < Administrate::BaseDashboard
     projects: Field::HasMany,
     id: Field::Number,
     name: Field::String,
+    display_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,6 +26,7 @@ class TechTagDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   name
+  display_order
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -32,6 +34,7 @@ class TechTagDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   name
+  display_order
   created_at
   updated_at
   ].freeze
@@ -41,6 +44,7 @@ class TechTagDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   tech_category
+  display_order
   name
   ].freeze
 

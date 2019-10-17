@@ -10,6 +10,7 @@ class TechCategoryDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    display_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -22,6 +23,7 @@ class TechCategoryDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   name
+  display_order
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -29,6 +31,7 @@ class TechCategoryDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   name
+  display_order
   created_at
   updated_at
   ].freeze
@@ -38,6 +41,7 @@ class TechCategoryDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   name
+  display_order
   ].freeze
 
   # COLLECTION_FILTERS

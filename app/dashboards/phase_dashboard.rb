@@ -12,6 +12,7 @@ class PhaseDashboard < Administrate::BaseDashboard
     projects: Field::HasMany,
     id: Field::Number,
     name: Field::String,
+    display_order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,6 +25,7 @@ class PhaseDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   name
+  display_order
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -31,6 +33,7 @@ class PhaseDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   name
+  display_order
   created_at
   updated_at
   ].freeze
