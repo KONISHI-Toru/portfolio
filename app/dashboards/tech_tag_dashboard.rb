@@ -8,7 +8,7 @@ class TechTagDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    tech_category: Field::BelongsTo,
+    tech_category: Field::BelongsTo.with_options(order: "display_order asc"),
     project_tags: Field::HasMany,
     projects: Field::HasMany,
     id: Field::Number,
