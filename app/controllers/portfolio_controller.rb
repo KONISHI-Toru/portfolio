@@ -2,6 +2,7 @@
 class PortfolioController < ApplicationController
   def index
     @portfolio_form = PortfolioForm.new
+    @tech_categories = TechCategory.order(:display_order)
   end
 
   def show
