@@ -53,15 +53,10 @@ class UserTest < ActiveSupport::TestCase
                      password_confirmation: "password",
                      published: true)
 
-    unpublished_user = User.new(name: "Unpublished User",
-                     email: "unpublished@example.com",
-                     password: "password",
-                     password_confirmation: "password")
     published_user.save
-    unpublished_user.save
     
     result = User.published
-    assert_equal 1, result.length
+    assert_equal 2, result.length
     result.each do |user|
       assert user.published?
     end
