@@ -7,7 +7,7 @@ class PortfolioControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get portfolio_show_url
+    get portfolio_show_url, params: { portfolio_form: { user_id: users(:test1).id } }
     assert_response :success
   end
 
