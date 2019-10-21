@@ -34,40 +34,15 @@
       </p>
 
       <h2>主な開発実績</h2>
-      <div class="accordion" id="accordion2" role="tablist">
-	<div class="card">
-	  <div class="card-header" role="tab" id="heading1">
-	    <h5 class="mb-0">
-              <a data-toggle="collapse" class="text-body stretched-link text-decoration-none" href="#collapse1" aria-expanded="true" aria-controls="collapse1"> アイテム1 </a>
-	    </h5>
-	  </div>
-	  <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1" data-parent="#accordion2">
-	    <div class="card-body">
-	      <h5>概要</h5>
-	      <h5>システム構成</h5>
-	      <!-- <img src="pr/pr.001.png" class="img-fluid"> -->
-	      <h5>使用技術</h5>
-	    </div>
-	  </div>
-	</div>
-	<div class="card">
-	  <div class="card-header" role="tab" id="heading2">
-	    <h5 class="mb-0">
-              <a class="collapsed text-body stretched-link text-decoration-none" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2"> アイテム2 </a>
-	    </h5>
-	  </div>
-	  <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2" data-parent="#accordion2">
-	    <div class="card-body">アイテム2のコンテンツ</div>
-	  </div>
-	</div>
-	<% @projects.each do |project| %>
+      <div class="accordion" id="projlist" role="tablist">
+	<% @projects.each.with_index(1) do |project, idx| %>
 	  <div class="card">
-	    <div class="card-header" role="tab" id="heading3">
+	    <div class="card-header" role="tab" id="heading<%= idx %>">
 	      <h5 class="mb-0">
-		<a class="collapsed text-body stretched-link text-decoration-none" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3"> <%= project.name %> </a>
+		<a class="collapsed text-body stretched-link text-decoration-none" data-toggle="collapse" href="#collapse<%= idx %>" aria-expanded="false" aria-controls="collapse<%= idx %>"> <%= project.name %> </a>
 	      </h5>
 	    </div>
-	    <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3" data-parent="#accordion2">
+	    <div id="collapse<%= idx %>" class="collapse" role="tabpanel" aria-labelledby="heading<%= idx %>" data-parent="#projlist">
 	      <div class="card-body">
 		<% if project.overview.present? %>
 		  <h5>概要</h5>
