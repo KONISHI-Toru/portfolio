@@ -30,6 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
+  application_name: "ポートフォリオ"
+  home: "ホーム"
+  admin: "管理"
+  login: "ログイン"
+  logout: "ログアウト"
+
   activerecord:
     models:
       user: ユーザ
