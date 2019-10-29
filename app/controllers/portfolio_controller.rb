@@ -19,6 +19,11 @@ class PortfolioController < ApplicationController
 
     # jumbotron を使っているので、application.html.erb のレイアウトを
     # 適用しないようにする。
-    render layout: false
+    #render layout: false
+    @portfolio = {}
+    @portfolio[:user] = @user
+    @portfolio[:projects] = @projects
+    @tech_categories = TechCategory.order(:display_order)
+    render action: :index
   end
 end

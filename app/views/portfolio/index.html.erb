@@ -1,17 +1,17 @@
 <style>
- .accordion > .card:first-of-type {
+ #detail-condition > .card:first-of-type {
    border-radius: 0.25rem;
    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
  }
- .accordion > .card:last-of-type {
+ #detail-condition > .card:last-of-type {
    border-radius: 0.25rem;
    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
  }
- .card-header {
+ .form-group .card-header {
    padding-top: 0.5rem;
    padding-bottom: 0.5rem;
  }
- .card-header > a {
+ .form-group .card-header > a {
    padding: 0rem;
  }
 </style>
@@ -30,14 +30,14 @@
   </div>
 
 
-  <div class="accordion form-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="accordion form-group" id="detail-condition" role="tablist" aria-multiselectable="true">
     <div class="card">
       <div class="card-header" role="tab" id="headingOne">
         <a class="btn btn-block bg-transparent text-left" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseOne">
           詳細条件
         </a>
       </div>
-      <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+      <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#detail-condition">
 	<div class="card-body">
 	  <fieldset class="form-group condition">
 	    <legend class="condition">技術要素</legend>
@@ -63,8 +63,11 @@
   
   <div class="form-group row">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit '表示', class: "btn btn-primary", formtarget: "_blank" %>
+      <%#= f.submit '表示', class: "btn btn-primary", formtarget: "_blank" %>
+      <%= f.submit '表示', class: "btn btn-primary" %>
     </div>
   </div>
 
 <% end %>
+
+<%= render 'portfolio' %>
