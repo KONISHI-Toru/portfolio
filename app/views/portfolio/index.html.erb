@@ -46,8 +46,8 @@
 		<label class="col-sm-3 control-label"><%= category.name %>:</label>
 		<div class="col-sm-9">
 		  <%= f.collection_check_boxes :tech_tag_ids, category.tech_tags, :id, :name, {include_hidden: false} do |b| %>
-		    <div class="checkbox-inline" >
-		      <%= b.label { b.check_box + b.text } %>
+		    <div class="form-check form-check-inline">
+		      <%= b.label(class: "form-check-label") { b.check_box + b.text } %>
 		    </div>
 		  <% end %>
 		</div>
