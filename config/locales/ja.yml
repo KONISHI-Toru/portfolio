@@ -35,6 +35,8 @@ ja:
   admin: "管理"
   login: "ログイン"
   logout: "ログアウト"
+  email: "E-mail"
+  password: "パスワード"
 
   activerecord:
     models:
