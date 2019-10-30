@@ -24,6 +24,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     hw_configuration: Field::Text,
     sw_configuration: Field::Text,
     production_url: Field::String,
+    repository_url: Field::String,
     from: Field::DateTime.with_options(format: "%Y/%m"),
     to: Field::DateTime.with_options(format: "%Y/%m"),
     published: Field::Boolean,
@@ -59,6 +60,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   hw_configuration
   sw_configuration
   production_url
+  repository_url
   from
   to
   published
@@ -82,6 +84,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   hw_configuration
   sw_configuration
   production_url
+  repository_url
   from
   to
   published

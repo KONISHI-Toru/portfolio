@@ -5,10 +5,12 @@
      margin-top: 1rem;
    }
 
-   .jumbotron-extend {
-     position: relative;
-     height: 100vh;
-     min-height: 300px;
+   h4 a.btn {
+     border: 0px;
+     padding: 0px;
+     font-size: 1.25rem;
+     font-weight: 500;
+     line-height: 1.2;
    }
   </style>
   <div class="container px-0 pt-2">
@@ -22,9 +24,9 @@
       <% @portfolio[:projects].each.with_index(1) do |project, idx| %>
 	<div class="card">
 	  <div class="card-header" role="tab" id="heading<%= idx %>">
-	    <h5 class="mb-0">
-	      <a class="collapsed text-body stretched-link text-decoration-none" data-toggle="collapse" href="#collapse<%= idx %>" aria-expanded="false" aria-controls="collapse<%= idx %>"> <%= project.name %> </a>
-	    </h5>
+	    <h4 class="mb-0">
+	      <a class="btn btn-block bg-transparent text-left" data-toggle="collapse" href="#collapse<%= idx %>" aria-expanded="false" aria-controls="collapse<%= idx %>"> <%= project.name %> </a>
+	    </h4>
 	  </div>
 	  <div id="collapse<%= idx %>" class="collapse" role="tabpanel" aria-labelledby="heading<%= idx %>" data-parent="#projlist">
 	    <div class="card-body">
@@ -58,7 +60,11 @@
 	      </p>
 	      <% if project.production_url.present? %>
 		<h5>本番環境URL</h5>
-		<p><a href="<%= project.production_url %>"><%= project.production_url %></a> </p>
+		<p><%= link_to project.production_url, project.production_url, target: :_blank %></p>
+	      <% end %>
+	      <% if project.repository_url.present? %>
+		<h5>リポジトリURL</h5>
+		<p><%= link_to project.repository_url, project.repository_url, target: :_blank %></p>
 	      <% end %>
 	      <% if project.from.present? || project.to.present? %>
 		<h5>期間</h5>

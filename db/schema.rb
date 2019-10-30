@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_17_021457) do
+ActiveRecord::Schema.define(version: 2019_10_30_060359) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_10_17_021457) do
     t.text "hw_configuration"
     t.text "sw_configuration"
     t.string "production_url"
+    t.string "repository_url"
     t.date "from"
     t.date "to"
     t.bigint "user_id"
