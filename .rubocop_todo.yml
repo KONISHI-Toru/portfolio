@@ -325,9 +325,9 @@ Style/MultilineTernaryOperator:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: both, prefix, postfix
-Style/NegatedIf:
-  Exclude:
-    - 'app/controllers/portfolio_controller.rb'
+# Style/NegatedIf:
+#   Exclude:
+#     - 'app/controllers/portfolio_controller.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.

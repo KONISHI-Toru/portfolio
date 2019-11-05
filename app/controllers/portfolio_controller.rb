@@ -6,7 +6,8 @@ class PortfolioController < ApplicationController
 
   def show
     @user = User.find(params[:portfolio_form][:user_id])
-    if ! @user.published
+    unless @user.published
+      @tech_categories = TechCategory.order(:display_order)
       # 非公開ユーザが指定された場合は元画面に戻す。
       render action: :index
       return
