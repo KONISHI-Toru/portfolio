@@ -33,14 +33,6 @@ Layout/AlignHash:
     - 'test/integration/users_login_test.rb'
     - 'test/models/user_test.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleAlignWith.
-# SupportedStylesAlignWith: either, start_of_block, start_of_line
-Layout/BlockAlignment:
-  Exclude:
-    - 'config/routes.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 Layout/EmptyLineAfterMagicComment:
