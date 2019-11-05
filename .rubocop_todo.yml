@@ -323,14 +323,6 @@ Style/MultilineTernaryOperator:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: both, prefix, postfix
-# Style/NegatedIf:
-#   Exclude:
-#     - 'app/controllers/portfolio_controller.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 # Configuration parameters: MinDigits, Strict.
 Style/NumericLiterals:
   Exclude:
@@ -348,14 +340,6 @@ Style/PercentLiteralDelimiters:
 Style/RedundantBegin:
   Exclude:
     - 'bin/yarn'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: ConvertCodeThatCanStartToReturnNil, Whitelist.
-# Whitelist: present?, blank?, presence, try, try!
-Style/SafeNavigation:
-  Exclude:
-    - 'app/controllers/sessions_controller.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
