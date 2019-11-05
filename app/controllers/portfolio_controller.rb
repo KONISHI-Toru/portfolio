@@ -1,5 +1,3 @@
-# coding: utf-8
-
 class PortfolioController < ApplicationController
   def index
     @portfolio_form = PortfolioForm.new

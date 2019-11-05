@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 class PortfolioHelperTest < ActionView::TestCase
   test "Return Unicode numeric character references" do
     str = "mailto:"

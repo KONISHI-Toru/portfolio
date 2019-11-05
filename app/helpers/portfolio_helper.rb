@@ -1,5 +1,3 @@
-# coding: utf-8
-
 module PortfolioHelper
   # 文字列を数値文字参照に変換する。
   def numerical_character_references(str)
