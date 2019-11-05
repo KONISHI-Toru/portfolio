@@ -1,1 +1,23 @@
 inherit_from: .rubocop_todo.yml
+
+
+Layout/IndentFirstArrayElement:
+  Exclude:
+    - 'app/dashboards/*.rb'
+    - 'db/seeds.rb'
+    - 'db/seeds/*.rb'
+
+Layout/SpaceInsideHashLiteralBraces:
+  Exclude:
+    - 'db/seeds.rb'
+    - 'db/seeds/*.rb'
+
+Metrics/LineLength:
+  Max: 259
+  Exclude:
+    - 'db/seeds.rb'
+
+Layout/SpaceAroundOperators:
+  Exclude:
+    - 'db/seeds.rb'
+    - 'db/seeds/*.rb'

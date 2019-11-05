@@ -43,8 +43,8 @@ Layout/BlockAlignment:
 
 # Offense count: 16
 # Cop supports --auto-correct.
-Layout/EmptyLineAfterMagicComment:
-  Enabled: false
+# Layout/EmptyLineAfterMagicComment:
+#   Enabled: false
 
 # Offense count: 1
 # Cop supports --auto-correct.
