@@ -14,7 +14,7 @@ class PortfolioController < ApplicationController
 
     form = params.require(:portfolio_form).permit(:user_id, {tech_tag_ids: []})
     @portfolio_form = PortfolioForm.new(form)
-    @projects = @portfolio_form.search()
+    @projects = @portfolio_form.search
 
     # jumbotron を使っているので、application.html.erb のレイアウトを
     # 適用しないようにする。
