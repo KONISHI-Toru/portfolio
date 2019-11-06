@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 
-
   private
     # def set_user
     #   @user = User.find_by!(email: session_params[:email])
