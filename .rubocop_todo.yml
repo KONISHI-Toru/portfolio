@@ -169,16 +169,6 @@ Naming/PredicateName:
     - 'app/helpers/portfolio_helper.rb'
     - 'test/test_helper.rb'
 
-# Offense count: 6
-# Configuration parameters: Include.
-# Include: app/models/**/*.rb
-Rails/HasManyOrHasOneDependent:
-  Exclude:
-    - 'app/models/phase.rb'
-    - 'app/models/project.rb'
-    - 'app/models/role.rb'
-    - 'app/models/tech_tag.rb'
-
 # Offense count: 1
 # Configuration parameters: Include.
 # Include: app/models/**/*.rb

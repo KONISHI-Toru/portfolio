@@ -35,4 +35,15 @@ class TechTagTest < ActiveSupport::TestCase
     @tech_tag.display_order = "xxx"
     assert_not @tech_tag.valid?
   end
+
+  test "projectに紐づいているものは削除不可" do
+    proj = projects(:proj001)
+    @tech_tag.projects.push(proj)
+    @tech_tag.save
+
+    assert_not @tech_tag.destroy
+    assert_equal 1, @tech_tag.errors.size
+    assert_equal "project tech tagsが存在しているので削除できません",
+                 @tech_tag.errors.full_messages.first
+  end
 end

@@ -34,4 +34,15 @@ class RoleTest < ActiveSupport::TestCase
     @role.display_order = "xxx"
     assert_not @role.valid?
   end
+
+  test "projectに紐づいているものは削除不可" do
+    proj = projects(:proj001)
+    @role.projects.push(proj)
+    @role.save
+
+    assert_not @role.destroy
+    assert_equal 1, @role.errors.size
+    assert_equal "project rolesが存在しているので削除できません",
+                 @role.errors.full_messages.first
+  end
 end

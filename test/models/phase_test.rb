@@ -34,4 +34,15 @@ class PhaseTest < ActiveSupport::TestCase
     @phase.display_order = "xxx"
     assert_not @phase.valid?
   end
+
+  test "projectに紐づいているものは削除不可" do
+    proj = projects(:proj001)
+    @phase.projects.push(proj)
+    @phase.save
+
+    assert_not @phase.destroy
+    assert_equal 1, @phase.errors.size
+    assert_equal "project phasesが存在しているので削除できません",
+                 @phase.errors.full_messages.first
+  end
 end
