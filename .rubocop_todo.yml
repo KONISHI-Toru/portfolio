@@ -230,14 +230,6 @@ Style/SymbolArray:
     - 'Gemfile'
     - 'db/migrate/20191002030759_create_active_storage_tables.active_storage.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'app/controllers/admin/display_order_controller.rb'
-
 # Offense count: 6
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleForMultiline.
