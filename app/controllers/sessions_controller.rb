@@ -20,15 +20,9 @@ class SessionsController < ApplicationController
   end
 
   private
-    # def set_user
-    #   @user = User.find_by!(email: session_params[:email])
-    # rescue
-    #   flash.now[:danger] = t('.flash.invalid_mail')
-    #   render action: 'new'
-    # end
 
-    # 許可するパラメータ
-    def session_params
-      params.require(:session).permit(:email, :password)
-    end
+  # 許可するパラメータ
+  def session_params
+    params.require(:session).permit(:email, :password)
+  end
 end
