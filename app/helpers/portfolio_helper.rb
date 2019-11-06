@@ -5,7 +5,7 @@ module PortfolioHelper
       return ""
     end
 
-    str.bytes.map{|v| "&\#x#{v.to_s(16)};"}.join
+    str.bytes.map { |v| "&\#x#{v.to_s(16)};" }.join
   end
 
   # Unicode数値参照で偽装したmailtoリンクを生成する。
