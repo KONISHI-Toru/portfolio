@@ -169,13 +169,6 @@ Naming/PredicateName:
     - 'app/helpers/portfolio_helper.rb'
     - 'test/test_helper.rb'
 
-# Offense count: 1
-# Configuration parameters: Include.
-# Include: app/models/**/*.rb
-Rails/InverseOf:
-  Exclude:
-    - 'app/models/tech_category.rb'
-
 # Offense count: 14
 # Configuration parameters: AllowedChars.
 Style/AsciiComments:

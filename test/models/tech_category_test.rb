@@ -34,4 +34,12 @@ class TechCategoryTest < ActiveSupport::TestCase
     @tech_category.display_order = "xxx"
     assert_not @tech_category.valid?
   end
+
+  test "関連要素から取得したオブジェクトが同じものであるべき" do
+    tech_category = tech_categories(:tech_category1)
+    assert_equal 3, tech_category.tech_tags.size
+
+    tech_tags = tech_category.tech_tags.first
+    assert tech_category.equal? tech_tags.tech_category
+  end
 end
