@@ -26,3 +26,6 @@ Layout/SpaceAroundOperators:
   Exclude:
     - 'db/seeds.rb'
     - 'db/seeds/*.rb'
+
+Style/AsciiComments:
+  Enabled: false
