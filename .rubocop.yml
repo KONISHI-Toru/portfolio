@@ -5,6 +5,9 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   TargetRailsVersion: 5.2
+  Exclude:
+    - 'bin/*'
+
 
 Layout/IndentFirstArrayElement:
   Exclude:

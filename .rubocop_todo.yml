@@ -166,13 +166,6 @@ Style/ClassMethods:
 Style/Documentation:
   Enabled: false
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'bin/rails'
-    - 'bin/rake'
-
 # Offense count: 102
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
@@ -202,12 +195,6 @@ Style/IfUnlessModifier:
     - 'app/forms/portfolio_form.rb'
     - 'app/helpers/portfolio_helper.rb'
 
-# Offense count: 2
-Style/MixinUsage:
-  Exclude:
-    - 'bin/setup'
-    - 'bin/update'
-
 # Offense count: 1
 Style/MultilineTernaryOperator:
   Exclude:
@@ -226,18 +213,6 @@ Style/NumericLiterals:
 Style/PercentLiteralDelimiters:
   Exclude:
     - 'config/initializers/assets.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/RedundantBegin:
-  Exclude:
-    - 'bin/yarn'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/StderrPuts:
-  Exclude:
-    - 'bin/yarn'
 
 # Offense count: 363
 # Cop supports --auto-correct.
