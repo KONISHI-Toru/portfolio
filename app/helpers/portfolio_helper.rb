@@ -16,7 +16,7 @@ module PortfolioHelper
 
     mailto = numerical_character_references("mailto:")
     converted = numerical_character_references(user.email)
-    raw "<a href=\"#{mailto}#{converted}\">#{converted}</a>"
+    tag.a converted, href: "#{mailto}#{converted}", escape_attributes: false
   end
 
   # プロジェクトの期間を表示するためのヘルパー。

@@ -186,11 +186,6 @@ Rails/InverseOf:
   Exclude:
     - 'app/models/tech_category.rb'
 
-# Offense count: 1
-Rails/OutputSafety:
-  Exclude:
-    - 'app/helpers/portfolio_helper.rb'
-
 # Offense count: 14
 # Configuration parameters: AllowedChars.
 Style/AsciiComments:
