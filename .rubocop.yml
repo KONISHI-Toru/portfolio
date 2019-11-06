@@ -3,6 +3,9 @@ require: rubocop-rails
 inherit_from: .rubocop_todo.yml
 
 
+AllCops:
+  TargetRailsVersion: 5.2
+
 Layout/IndentFirstArrayElement:
   Exclude:
     - 'app/dashboards/*.rb'
