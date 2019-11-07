@@ -5,7 +5,7 @@ class PortfolioFormTest < ActiveSupport::TestCase
     @form = PortfolioForm.new
     @form.user_id = users(:test1).id
     results = @form.search
-    assert_equal 2, results.length
+    assert_equal 4, results.length
     results.each do |proj|
       assert proj.published
     end
@@ -19,6 +19,21 @@ class PortfolioFormTest < ActiveSupport::TestCase
     assert_equal 1, results.length
     results.each do |proj|
       assert proj.tech_tags.include?(tech_tags(:tech_tag1)) || proj.tech_tags.include?(tech_tags(:tech_tag3))
+    end
+  end
+
+  test "開始時期の新しいもの順に取得" do
+    @form = PortfolioForm.new
+    @form.user_id = users(:test1).id
+    results = @form.search
+    assert_equal 4, results.length
+    current_from = Time.zone.today
+    current_to = Time.zone.today
+    results.each do |proj|
+      assert proj.from <= current_from
+      assert proj.to <= current_to if proj.from == current_from
+      current_from = proj.from
+      current_to = proj.to
     end
   end
 end

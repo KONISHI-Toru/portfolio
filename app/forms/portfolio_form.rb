@@ -14,6 +14,7 @@ class PortfolioForm
       condition = condition.includes(:tech_tags).where(tech_tags: {id: tech_tag_ids})
     end
     condition = condition.where(published: true)
+    condition = condition.order(from: :desc).order(to: :desc)
 
     condition
   end

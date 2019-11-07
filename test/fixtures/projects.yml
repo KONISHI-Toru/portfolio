@@ -35,3 +35,13 @@ proj004:
   from: 2015-1-01
   to: 2015-6-01
   user: test1
+
+proj005:
+  <<: *DEFAULTS
+  from: 2016-1-01
+  to: 2016-3-01
+
+proj006:
+  <<: *DEFAULTS
+  from: 2016-1-01
+  to: 2016-2-01
