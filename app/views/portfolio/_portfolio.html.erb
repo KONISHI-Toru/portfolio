@@ -56,6 +56,14 @@
 	      <p>
 		<%= project.tech_tags.collect { |t| t.name }.join(", ") %>
 	      </p>
+	      <h5>担当フェーズ</h5>
+	      <p>
+		<%= project.phases.collect { |t| t.name }.join(", ") %>
+	      </p>
+	      <h5>役割</h5>
+	      <p>
+		<%= project.roles.collect { |t| t.name }.join(", ") %>
+	      </p>
 	      <% if project.production_url.present? %>
 		<h5>本番環境URL</h5>
 		<p><%= link_to project.production_url, project.production_url, target: :_blank %></p>
