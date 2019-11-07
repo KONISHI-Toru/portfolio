@@ -1,11 +1,12 @@
 class PortfolioController < ApplicationController
   def index
     @portfolio_form = PortfolioForm.new
-    @tech_categories = TechCategory.order(:display_order)
+    init_conditions
   end
 
   def show
     @user = User.find(params[:portfolio_form][:user_id])
+    init_conditions
     unless @user.published
       @tech_categories = TechCategory.order(:display_order)
       # 非公開ユーザが指定された場合は元画面に戻す。
@@ -23,7 +24,12 @@ class PortfolioController < ApplicationController
     @portfolio = {}
     @portfolio[:user] = @user
     @portfolio[:projects] = @projects
-    @tech_categories = TechCategory.order(:display_order)
     render action: :index
+  end
+
+  private
+
+  def init_conditions
+    @tech_categories = TechCategory.includes(:tech_tags).order(:display_order)
   end
 end
