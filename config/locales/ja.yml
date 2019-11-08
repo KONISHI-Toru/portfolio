@@ -38,6 +38,8 @@ ja:
   email: "E-mail"
   password: "パスワード"
 
+  invalid_password: 'メールアドレスとパスワードの組合せが不正です。'
+
   activerecord:
     models:
       user: ユーザ
