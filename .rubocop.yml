@@ -32,3 +32,8 @@ Layout/SpaceAroundOperators:
 
 Style/AsciiComments:
   Enabled: false
+
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
