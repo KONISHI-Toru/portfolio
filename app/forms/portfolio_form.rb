@@ -6,12 +6,15 @@ class PortfolioForm
   validates :user_id, presence: true, on: :show
   
   def search
-    condition = Project
+    # condition = Project.with_attached_sw_diagram
+    condition = Project.with_attached_sw_diagram
+                       .with_attached_hw_diagram
+                       .includes(%i[roles phases tech_tags])
 
     # user_id は必須。
     condition = condition.where(user_id: user_id)
     if tech_tag_ids.present?
-      condition = condition.includes(:tech_tags).where(tech_tags: {id: tech_tag_ids})
+      condition = condition.where(tech_tags: {id: tech_tag_ids})
     end
     condition = condition.where(published: true)
     condition = condition.order(from: :desc).order(to: :desc)
