@@ -5,11 +5,12 @@ class PortfolioController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:portfolio_form][:user_id])
+    @user = User.find_by_id(params[:portfolio_form][:user_id])
     init_conditions
-    unless @user.published
+    unless @user && @user.published
       @tech_categories = TechCategory.order(:display_order)
       # 非公開ユーザが指定された場合は元画面に戻す。
+      flash.now[:danger] = I18n.t 'invalid_process'
       render action: :index
       return
     end

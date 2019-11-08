@@ -13,4 +13,12 @@ class PortfolioControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "ポートフォリオ"
   end
 
+  test "invalid user id" do
+    get portfolio_show_url, params: { portfolio_form: { user_id: 9999 } }
+    assert_response :success
+    assert_not flash.empty?
+    assert_equal flash[:danger], '不正な処理が実行されました。'
+    assert_select "title", "ポートフォリオ"
+  end
+  
 end

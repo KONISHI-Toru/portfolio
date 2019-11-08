@@ -39,6 +39,7 @@ ja:
   password: "パスワード"
 
   invalid_password: 'メールアドレスとパスワードの組合せが不正です。'
+  invalid_process: '不正な処理が実行されました。'
 
   activerecord:
     models:
