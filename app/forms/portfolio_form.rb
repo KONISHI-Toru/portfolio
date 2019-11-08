@@ -6,7 +6,6 @@ class PortfolioForm
   validates :user_id, presence: true, on: :show
   
   def search
-    # condition = Project.with_attached_sw_diagram
     condition = Project.with_attached_sw_diagram
                        .with_attached_hw_diagram
                        .includes(%i[roles phases tech_tags])
