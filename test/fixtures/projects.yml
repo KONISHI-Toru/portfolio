@@ -45,3 +45,10 @@ proj006:
   <<: *DEFAULTS
   from: 2016-1-01
   to: 2016-2-01
+
+<% 50.times do |n| %>
+proj_<%= n %>:
+  <<: *DEFAULTS
+  from: 2016-1-01
+  to: 2016-2-01
+<% end %>

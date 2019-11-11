@@ -5,7 +5,7 @@ class PortfolioController < ApplicationController
   end
 
   def show
-    form = params.require(:portfolio_form).permit(:user_id, {tech_tag_ids: []})
+    form = params.require(:portfolio_form).permit(:user_id, {tech_tag_ids: []}, :count)
     @portfolio_form = PortfolioForm.new(form)
 
     @user = User.find_by_id(params[:portfolio_form][:user_id]) if @portfolio_form.valid?
@@ -32,5 +32,6 @@ class PortfolioController < ApplicationController
 
   def init_conditions
     @tech_categories = TechCategory.includes(:tech_tags).order(:display_order)
+    @counts = [[5, 5], [10, 10], [30, 30], ["全て", -1]]
   end
 end

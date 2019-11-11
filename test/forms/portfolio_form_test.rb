@@ -5,7 +5,7 @@ class PortfolioFormTest < ActiveSupport::TestCase
     @form = PortfolioForm.new
     @form.user_id = users(:test1).id
     results = @form.search
-    assert_equal 4, results.length
+    assert_equal 54, results.length
     results.each do |proj|
       assert proj.published
     end
@@ -26,7 +26,7 @@ class PortfolioFormTest < ActiveSupport::TestCase
     @form = PortfolioForm.new
     @form.user_id = users(:test1).id
     results = @form.search
-    assert_equal 4, results.length
+    assert_equal 54, results.length
     current_from = Time.zone.today
     current_to = Time.zone.today
     results.each do |proj|
@@ -34,6 +34,28 @@ class PortfolioFormTest < ActiveSupport::TestCase
       assert proj.to <= current_to if proj.from == current_from
       current_from = proj.from
       current_to = proj.to
+    end
+  end
+
+  test "指定された件数分のみ取得" do
+    @form = PortfolioForm.new
+    @form.user_id = users(:test1).id
+    @form.count = 5
+    results = @form.search
+    assert_equal 5, results.length
+    results.each do |proj|
+      assert proj.published
+    end
+  end
+
+  test "全権指定取得" do
+    @form = PortfolioForm.new
+    @form.user_id = users(:test1).id
+    @form.count = -1
+    results = @form.search
+    assert_equal 54, results.length
+    results.each do |proj|
+      assert proj.published
     end
   end
 end

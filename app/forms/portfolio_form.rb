@@ -1,7 +1,7 @@
 class PortfolioForm
   include ActiveModel::Model
 
-  attr_accessor :user_id, :tech_tag_ids
+  attr_accessor :user_id, :tech_tag_ids, :count
 
   validates :user_id, presence: true, on: :show
   
@@ -17,6 +17,7 @@ class PortfolioForm
     end
     condition = condition.where(published: true)
     condition = condition.order(from: :desc).order(to: :desc)
+    condition = condition.limit(count) unless count.to_i == -1
 
     condition
   end
