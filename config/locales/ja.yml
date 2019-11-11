@@ -53,6 +53,7 @@ ja:
       user:
         id: ID
         name: 名前
+        email: E-Mail
         password: パスワード
         password_confirmation: パスワード（確認）
         introduction: 自己紹介文
@@ -61,12 +62,14 @@ ja:
         updated_at: 更新日時
       project:
         id: ID
+        user: ユーザ
         name: 名前
         target: ターゲット
         overview: 概要
         hw_configuration: H/W構成
         sw_configuration: S/W構成
         production_url: 本番環境URL
+        repository_url: リポジトリURL
         from: 開始時期
         to: 終了時期
         published: 公開
@@ -80,21 +83,25 @@ ja:
       phase:
         id: ID
         name: 名前
+        display_order: 表示順
         created_at: 作成日時
         updated_at: 更新日時
       role:
         id: ID
         name: 名前
+        display_order: 表示順
         created_at: 作成日時
         updated_at: 更新日時
       tech_category:
         id: ID
         name: 名前
+        display_order: 表示順
         created_at: 作成日時
         updated_at: 更新日時
       tech_tag:
         id: ID
         name: 名前
+        display_order: 表示順
         tech_category: 技術カテゴリ
         created_at: 作成日時
         updated_at: 更新日時
