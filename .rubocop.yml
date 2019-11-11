@@ -20,6 +20,9 @@ Layout/SpaceInsideHashLiteralBraces:
     - 'db/seeds.rb'
     - 'db/seeds/*.rb'
 
+Metrics/AbcSize:
+  Max: 20
+
 Metrics/LineLength:
   Max: 259
   Exclude:

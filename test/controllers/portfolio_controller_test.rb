@@ -20,5 +20,4 @@ class PortfolioControllerTest < ActionDispatch::IntegrationTest
     assert_equal flash[:danger], '不正な処理が実行されました。'
     assert_select "title", "ポートフォリオ"
   end
-  
 end

@@ -8,9 +8,9 @@ class PortfolioController < ApplicationController
     form = params.require(:portfolio_form).permit(:user_id, {tech_tag_ids: []}, :count)
     @portfolio_form = PortfolioForm.new(form)
 
-    @user = User.find_by_id(params[:portfolio_form][:user_id]) if @portfolio_form.valid?
+    @user = User.find_by(id: params[:portfolio_form][:user_id]) if @portfolio_form.valid?
     init_conditions
-    unless @user && @user.published
+    unless @user&.published
       # 非公開ユーザが指定された場合は元画面に戻す。
       flash.now[:danger] = I18n.t 'invalid_process'
       render action: :index
