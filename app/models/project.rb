@@ -8,4 +8,12 @@ class Project < ApplicationRecord
   has_many :phases, through: :project_phases
   has_many :project_roles, dependent: :delete_all
   has_many :roles, through: :project_roles
+
+  def title
+    value = ''
+    if target.present?
+      value += "#{target} "
+    end
+    value += name
+  end
 end
