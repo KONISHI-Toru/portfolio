@@ -9,6 +9,12 @@ module Admin
     #   send_foo_updated_email
     # end
 
+    def remove_attachment
+      attachment = ActiveStorage::Attachment.find(params[:attachment_id])
+      attachment.purge
+      redirect_back(fallback_location: "/")
+    end
+
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`
     # actions.

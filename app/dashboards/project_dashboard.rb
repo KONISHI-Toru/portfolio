@@ -9,8 +9,8 @@ class ProjectDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
-    hw_diagram: Field::ActiveStorage,
-    sw_diagram: Field::ActiveStorage,
+    hw_diagram: Field::ActiveStorage.with_options({destroy_path: :admin_destroy_image_path}),
+    sw_diagram: Field::ActiveStorage.with_options({destroy_path: :admin_destroy_image_path}),
     project_tech_tags: Field::HasMany,
     tech_tags: Field::HasMany,
     project_phases: Field::HasMany,
