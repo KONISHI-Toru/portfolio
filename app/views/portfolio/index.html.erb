@@ -47,18 +47,18 @@
 	<div class="card-body">
 	  <fieldset class="form-group condition">
 	    <legend class="condition">技術要素</legend>
-	    <div class="form-group row">
-	      <% @tech_categories.each do |category| %>
+	    <% @tech_categories.each do |category| %>
+	      <div class="form-group row">
 		<label class="col-sm-3 control-label"><%= category.name %>:</label>
 		<div class="col-sm-9">
-		  <%= f.collection_check_boxes :tech_tag_ids, category.tech_tags, :id, :name, {include_hidden: false, checked: @portfolio_form.tech_tag_ids} do |b| %>
+		  <%= f.collection_check_boxes :tech_tag_ids, category.tech_tags, :id, :name, {include_hidden: false, checked: @portfolio_form.tech_tag_ids[category.id.to_s]}, {name: "portfolio_form[tech_tag_ids][#{category.id}][]"} do |b| %>
 		    <div class="form-check form-check-inline">
 		      <%= b.label(class: "form-check-label") { b.check_box + b.text } %>
 		    </div>
 		  <% end %>
 		</div>
-	      <% end %>
-	    </div>
+	      </div>
+	    <% end %>
 	  </fieldset>
 	</div>
       </div>

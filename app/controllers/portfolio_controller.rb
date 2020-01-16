@@ -5,7 +5,7 @@ class PortfolioController < ApplicationController
   end
 
   def show
-    form = params.require(:portfolio_form).permit(:user_id, {tech_tag_ids: []}, :count)
+    form = params.require(:portfolio_form).permit(:user_id, {tech_tag_ids: {}}, :count)
     @portfolio_form = PortfolioForm.new(form)
 
     @user = User.find_by(id: params[:portfolio_form][:user_id]) if @portfolio_form.valid?

@@ -14,7 +14,10 @@ class PortfolioFormTest < ActiveSupport::TestCase
   test "技術タグ指定で取得" do
     @form = PortfolioForm.new
     @form.user_id = users(:test1).id
-    @form.tech_tag_ids = [tech_tags(:tech_tag1).id, tech_tags(:tech_tag3).id]
+    @form.tech_tag_ids = {
+      tech_tags(:tech_tag1).tech_category.id => [tech_tags(:tech_tag1).id],
+      tech_tags(:tech_tag2).tech_category.id => [tech_tags(:tech_tag2).id]
+    }
     results = @form.search
     assert_equal 1, results.length
     results.each do |proj|
