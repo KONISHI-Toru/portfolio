@@ -16,15 +16,18 @@ By default, it renders:
 <html lang="<%= I18n.locale %>">
 <head>
   <meta charset="utf-8">
-  <meta name="ROBOTS" content="NOODP">
+  <meta name="ROBOTS" content="noodp, noydir, index, follow">
   <meta name="viewport" content="initial-scale=1">
   <title>
     <%= content_for(:title) %> - <%= t :application_name %>
   </title>
-  <%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'administrate/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'administrate', 'data-turbolinks-track': 'reload' %>
   <%= render "stylesheet" %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tags %>
+  <meta name="turbolinks-root" content="/admin">
   <style>
    body {
      padding-top: 4.5rem;
